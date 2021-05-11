@@ -29,7 +29,7 @@ function saveIssue(e){
         //Json parse retrieve info from local storage in json format
         let issues = JSON.parse(localStorage.getItem('issues'));
         issues.push(issue);
-        //convert to json and send to local storage
+        //converts to json and send to local storage
         localStorage.setItem('issues',JSON.stringify(issues));
     }
 
