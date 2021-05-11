@@ -29,7 +29,7 @@ function saveIssue(e){
         //Json parse retrieve info from local storage in json format
         let issues = JSON.parse(localStorage.getItem('issues'));
         issues.push(issue);
-        //convertb to json and send to local storage
+        //convert to json and send to local storage
         localStorage.setItem('issues',JSON.stringify(issues));
     }
 
@@ -39,9 +39,10 @@ function saveIssue(e){
 }
 
 function setStatusClosed(id){
+    console.log("working on call");
     let issues = JSON.parse(localStorage.getItem('issues'));
 
-    for(let i=0; i<issses.length;i++){
+    for(let i=0; i<issues.length;i++){
         if(issues[i].id == id){
             issues[i].status = 'Closed';
         }
@@ -89,8 +90,8 @@ function fetchIssues(){
                 <p>
                 <span class="fa fa-user"> ${assignedTo}</span>
                 </p>
-                <a href="#" onclick="setStatusClosed(${id})" class="btn btn-warning">Close</a>
-                <a href="#" onclick="deleteIssue(${id})" class="btn btn-danger">Delete</a>
+                <a href="javascript:void(0)" onclick="setStatusClosed('${id}')" class="btn btn-warning">Close</a>
+                <a href="javascript:void(0)" onclick="deleteIssue('${id}')" class="btn btn-danger">Delete</a>
             </div>
         `;
     }
