@@ -63,7 +63,7 @@ function deleteIssue(id){
     fetchIssues();
 }
 
-//to fetch already created issues from storage of browser(cookies in  general)
+//to fetch already created issues from storage of browser(cookies in general)
 function fetchIssues(){
     let issues = JSON.parse(localStorage.getItem('issues'));
     let issuesList = document.getElementById("issuesList");
